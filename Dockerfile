@@ -9,8 +9,7 @@ WORKDIR $CATALINA_HOME
 
 ENV TOMCAT_MAJOR 8
 ENV TOMCAT_VERSION 8.0.32
-#ENV TOMCAT_TGZ_URL ${REPO}/tomcat/apache-tomcat-$TOMCAT_VERSION.tar.gz
-ENV TOMCAT_TGZ_URL http://ftp.heanet.ie/mirrors/www.apache.org/dist/tomcat/tomcat-8/v8.0.32/bin/apache-tomcat-8.0.32.tar.gz
+ENV TOMCAT_TGZ_URL http://ftp.heanet.ie/mirrors/www.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR}/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz
 
 RUN set -x \
     && mkdir /var/run/tomcat \
