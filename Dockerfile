@@ -1,7 +1,6 @@
 FROM showtimeanalytics/java-jre:8u51
 MAINTAINER Alberto Gregoris <alberto@showtimeanalytics.com>
 
-ENV REPO=https://s3-eu-west-1.amazonaws.com/stan-management-assets
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 RUN mkdir -p "$CATALINA_HOME"
