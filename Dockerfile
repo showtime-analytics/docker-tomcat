@@ -33,11 +33,12 @@ RUN set -x \
   && tar -xf apache-tomcat-$TOMCAT_VERSION.tar.gz --strip-components=1 \
   && rm bin/*.bat \
   && rm apache-tomcat-$TOMCAT_VERSION.tar.gz \
+  && rm -r webapps/* \
   && cd /tmp \
-  && wget -q "${MIRROR}/tomcat/tomcat-connectors/native/1.2.7/source/tomcat-native-1.2.7-src.tar.gz" \
+  && wget -q "${MIRROR}/tomcat/tomcat-connectors/native/1.2.8/source/tomcat-native-1.2.8-src.tar.gz" \
   && wget -q "${MIRROR}/apr/apr-1.5.2.tar.gz" \
   && tar -xf apr-1.5.2.tar.gz && cd apr-1.5.2 && ./configure && make && make install \
-  && cd /tmp && tar -xf tomcat-native-1.2.7-src.tar.gz && cd tomcat-native-1.2.7-src/native \
+  && cd /tmp && tar -xf tomcat-native-1.2.8-src.tar.gz && cd tomcat-native-1.2.8-src/native \
   && ./configure --with-apr=/usr/local/apr/bin --with-java-home=$JAVA_HOME --with-ssl=no --prefix=$CATALINA_HOME \
   && make && make install \
   && ln -sv $CATALINA_HOME/lib/libtcnative-1.so /usr/lib/ && ln -sv /lib/libz.so.1 /usr/lib/libz.so.1 \
